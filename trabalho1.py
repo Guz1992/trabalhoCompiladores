@@ -10,8 +10,8 @@ window = builder.get_object("janela")
 caixaTexto = builder.get_object("CaixaDeEntrada")
 window.show_all()
 
-functions.teste()
 texto = caixaTexto.get_text()
+print(functions.verificaVazia(texto))
 
 builder.connect_signals({
     "gtk_main_quit": Gtk.main_quit,
