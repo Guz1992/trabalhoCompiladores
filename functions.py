@@ -21,4 +21,6 @@ def operadores(xar):
     TodosOperadores = '+-*/.&'
     return xar.upper() in TodosOperadores
 
+print("teste")
+
 #def fixaParaPosFixa():

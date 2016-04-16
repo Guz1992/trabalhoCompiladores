@@ -90,7 +90,13 @@ Trabalho 1</property>
               <object class="GtkLabel" id="TextInfixa">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Infixa</property>
+                <property name="label" translatable="yes">Infixa:</property>
+                <attributes>
+                  <attribute name="font-desc" value="Droid Sans Bold 10"/>
+                  <attribute name="style" value="normal"/>
+                  <attribute name="weight" value="heavy"/>
+                  <attribute name="foreground" value="#590a692292c5"/>
+                </attributes>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -101,7 +107,14 @@ Trabalho 1</property>
               <object class="GtkLabel" id="TextPosfixa">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Posfixa</property>
+                <property name="label" translatable="yes">Posfixa:</property>
+                <attributes>
+                  <attribute name="font-desc" value="Droid Sans Bold 10"/>
+                  <attribute name="style" value="normal"/>
+                  <attribute name="weight" value="heavy"/>
+                  <attribute name="foreground" value="#590a692292c5"/>
+                  <attribute name="gravity" value="auto"/>
+                </attributes>
               </object>
               <packing>
                 <property name="left_attach">0</property>

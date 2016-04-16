@@ -16,5 +16,6 @@ print(functions.verificaVazia(texto))
 builder.connect_signals({
     "gtk_main_quit": Gtk.main_quit,
     })
+#teste
 
 Gtk.main()
