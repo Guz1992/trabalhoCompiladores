@@ -126,6 +126,7 @@ Trabalho 1</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="image_position">right</property>
+                <signal name="clicked" handler="ConverterAct" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
