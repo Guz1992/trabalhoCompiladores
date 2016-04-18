@@ -1,3 +1,4 @@
+""" este código foi desenvolvido pelos alunos, Gustavo Macedo Rodrigues e Idinilson Nunes de Aguiar"""
 import gi
 import functions
 gi.require_version('Gtk', '3.0')

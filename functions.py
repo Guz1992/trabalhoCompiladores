@@ -1,3 +1,4 @@
+""" este código foi desenvolvido pelos alunos, Gustavo Macedo Rodrigues e Idinilson Nunes de Aguiar"""
 def precedencia(operatores):
     if operatores == '+' or operatores == "/" or operatores == "-":
         return 1
