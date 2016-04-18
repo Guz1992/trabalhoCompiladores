@@ -12,6 +12,7 @@ def verificaVazia(entrada):
 	if entrada == None or entrada == "":
 		entrada = "&";
 	return entrada
+	
 
 def operandos(xar):
     TodosOperandos = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxz&'
