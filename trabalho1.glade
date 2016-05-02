@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.18.3 
-""" este código foi desenvolvido pelos alunos, Gustavo Macedo Rodrigues e Idinilson Nunes de Aguiar"""
--->
 
+""" este código foi desenvolvido pelos alunos, Gustavo Macedo Rodrigues e Idinilson Nunes de Aguiar"""
+
+-->
 <interface>
   <requires lib="gtk+" version="3.12"/>
+  <object class="GtkTextBuffer" id="textbuffer1">
+    <property name="text" translatable="yes">aa
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a</property>
+  </object>
   <object class="GtkWindow" id="janela">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Trabalho1</property>
@@ -160,17 +182,18 @@ Trabalho 1</property>
           </packing>
         </child>
         <child>
-          <object class="GtkImage" id="image2">
+          <object class="GtkTextView" id="textview1">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="halign">center</property>
-            <property name="xalign">0</property>
-            <property name="yalign">0</property>
-            <property name="pixbuf">pilhas.jpg</property>
+            <property name="can_focus">True</property>
+            <property name="editable">False</property>
+            <property name="wrap_mode">word</property>
+            <property name="justification">center</property>
+            <property name="buffer">textbuffer1</property>
+            <property name="input_purpose">pin</property>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="fill">True</property>
             <property name="position">2</property>
           </packing>
         </child>

@@ -20,6 +20,10 @@ def ConverterActSignal(self):
     else:
         CaixaSaida.set_text("Expressão com erros nos parênteses!")
 
+print(functions.fechoDeKleene(functions.baseF("a")))
+print(functions.fechoDeKleene(functions.baseF("b")))
+print(functions.fechoDeKleene(functions.baseF("c")))
+
 builder.connect_signals({
     "gtk_main_quit": Gtk.main_quit,
     "ConverterAct": ConverterActSignal,
