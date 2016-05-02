@@ -110,13 +110,10 @@ def baseF(simbolo):
 	base.estados = [None]*base.qtEstados
 	base.estados[0] = 0
 	base.estados[1] = 1
-	base.Transicoes.append(0)
-	base.Transicoes.append(1)
-	base.Transicoes.append(simbolo)
+	base.Transicoes.append([0,1,simbolo])
 	base.estadoInicial = 0
 	base.estadosFinal = 1
 	return base
-
 
 def uneAlfabetos(a,b):
 	return a+b
@@ -124,7 +121,11 @@ def uneAlfabetos(a,b):
 def distibuiChars(lista,lista2):
 	for i in range(0,len(lista)):
 		lista2.append(lista[i])
-	return lista2	
+	return lista2
+
+def percorreTrasicoes(Transicoes,novo):
+	for i in range(0,len(Transicoes)):	
+		novo.Transicoes.append(Transicoes[i])
 
 def fechoDeKleene(Ak):
 	novo = Automato()
@@ -155,9 +156,10 @@ def concatenacao(A,B):
 	for i in range(0,len(novo.estados)):
 		novo.estados[i] = i
 	
-	novo.Transicoes.append([A.Transicoes[0],A.Transicoes[1],A.Transicoes[2]])
-	novo.Transicoes.append([B.Transicoes[0],B.Transicoes[1],B.Transicoes[2]])
-	novo.Transicoes.append([A.Transicoes[-2],B.Transicoes[0],"&"])
+	percorreTrasicoes(A.Transicoes,novo)
+	percorreTrasicoes(B.Transicoes,novo)
+	print(novo.Transicoes)
+	novo.Transicoes.append([A.Transicoes[-1][-2],B.Transicoes[0][0],"&"])
 
 	novo.estadoInicial = 0
 	novo.estadosFinal = novo.estados[-1]
@@ -173,13 +175,14 @@ def uniao(A,B):
 	for i in range(0,len(novo.estados)):
 		novo.estados[i] = i
 	
-	novo.Transicoes.append([A.Transicoes[0],A.Transicoes[1],A.Transicoes[2]])
-	novo.Transicoes.append([B.Transicoes[0],B.Transicoes[1],B.Transicoes[2]])
-	novo.Transicoes.append([novo.Transicoes[0][0],B.Transicoes[0],"&"])
-	novo.Transicoes.append([novo.Transicoes[0][0],A.Transicoes[0],"&"])
-	novo.Transicoes.append([A.Transicoes[-2],novo.Transicoes[0][-2],"&"])
-	novo.Transicoes.append([B.Transicoes[-2],novo.Transicoes[0][-2],"&"])
+	percorreTrasicoes(A.Transicoes,novo)
+	percorreTrasicoes(B.Transicoes,novo)
+	novo.Transicoes.append([novo.Transicoes[0][0],B.Transicoes[0][0],"&"])
+	novo.Transicoes.append([novo.Transicoes[0][0],A.Transicoes[0][0],"&"])
+	novo.Transicoes.append([A.Transicoes[-1][-2],novo.Transicoes[0][-2],"&"])
+	novo.Transicoes.append([B.Transicoes[-1][-2],novo.Transicoes[0][-2],"&"])
 
+	print(novo.Transicoes[0])
 	novo.estadoInicial = 0
 	novo.estadosFinal = novo.estados[-1]
 
