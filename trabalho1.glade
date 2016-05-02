@@ -6,27 +6,7 @@
 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
-  <object class="GtkTextBuffer" id="textbuffer1">
-    <property name="text" translatable="yes">aa
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a
-a</property>
-  </object>
+  <object class="GtkTextBuffer" id="textbuffer1"/>
   <object class="GtkWindow" id="janela">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Trabalho1</property>
@@ -188,8 +168,8 @@ Trabalho 1</property>
             <property name="editable">False</property>
             <property name="wrap_mode">word</property>
             <property name="justification">center</property>
+            <property name="bottom_margin">1</property>
             <property name="buffer">textbuffer1</property>
-            <property name="input_purpose">pin</property>
           </object>
           <packing>
             <property name="expand">False</property>

@@ -10,6 +10,7 @@ builder.add_from_file("trabalho1.glade")
 window = builder.get_object("janela")
 caixaTexto = builder.get_object("CaixaDeEntrada")
 CaixaSaida = builder.get_object("CaixaDeSaida")
+caixaView = builder.get_object("textbuffer1")
 window.show_all()
 
 def ConverterActSignal(self):
@@ -17,12 +18,16 @@ def ConverterActSignal(self):
     if functions.verificaParenteses(texto) == 0:
         convertido = functions.infixaParaPosfixa(texto)  
         CaixaSaida.set_text("".join(convertido))
+        x = functions.percorreExpressao("".join(convertido))
+        text = str(functions.olhaPilha(x))
+        print(text)
+        caixaView.set_text(text)
     else:
         CaixaSaida.set_text("Expressão com erros nos parênteses!")
 
-print(functions.fechoDeKleene(functions.baseF("a")))
-print(functions.fechoDeKleene(functions.baseF("b")))
-print(functions.fechoDeKleene(functions.baseF("c")))
+
+
+#functions.fechoDeKleene(functions.baseF("a"))
 
 builder.connect_signals({
     "gtk_main_quit": Gtk.main_quit,

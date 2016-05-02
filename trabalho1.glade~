@@ -7,18 +7,23 @@
 <interface>
   <requires lib="gtk+" version="3.12"/>
   <object class="GtkTextBuffer" id="textbuffer1">
-    <property name="text" translatable="yes">a
+    <property name="text" translatable="yes">aa
 a
 a
 a
 a
 a
-aa
 a
 a
 a
 a
-aa
+a
+a
+a
+a
+a
+a
+a
 a
 a</property>
   </object>
@@ -180,7 +185,11 @@ Trabalho 1</property>
           <object class="GtkTextView" id="textview1">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="editable">False</property>
+            <property name="wrap_mode">word</property>
+            <property name="justification">center</property>
             <property name="buffer">textbuffer1</property>
+            <property name="input_purpose">pin</property>
           </object>
           <packing>
             <property name="expand">False</property>
